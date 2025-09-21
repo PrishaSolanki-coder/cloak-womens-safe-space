@@ -2,41 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Cloak Cyber Safety Design System - Modern, Trustworthy, Empowering */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Brand Colors - HSL format for trust and empowerment */
+    --background: 220 26% 97%;
+    --foreground: 225 25% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 225 25% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 225 25% 12%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary: Deep Security Blue */
+    --primary: 225 72% 25%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 225 72% 20%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary: Clean Tech Gray */
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 225 25% 12%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Accent: Empowerment Purple */
+    --accent: 270 65% 45%;
+    --accent-foreground: 0 0% 100%;
+    --accent-hover: 270 65% 40%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Supporting Colors */
+    --muted: 220 14% 96%;
+    --muted-foreground: 225 9% 46%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 225 72% 25%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Custom Gradients for Modern Appeal */
+    --gradient-hero: linear-gradient(135deg, hsl(225 72% 25%), hsl(270 65% 45%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 14% 98%));
+    --gradient-feature: linear-gradient(135deg, hsl(225 72% 25% / 0.05), hsl(270 65% 45% / 0.05));
+    
+    /* Shadows for Depth */
+    --shadow-soft: 0 4px 20px hsl(225 72% 25% / 0.08);
+    --shadow-card: 0 8px 30px hsl(225 72% 25% / 0.12);
+    --shadow-hero: 0 20px 50px hsl(225 72% 25% / 0.15);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +119,67 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-medium;
+  }
+}
+
+@layer components {
+  /* Hero Section Styles */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .hero-shadow {
+    box-shadow: var(--shadow-hero);
+  }
+
+  /* Card Components */
+  .card-gradient {
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-card);
+  }
+  
+  .feature-gradient {
+    background: var(--gradient-feature);
+  }
+
+  /* Interactive Elements */
+  .interactive-hover {
+    transition: var(--transition-smooth);
+  }
+  
+  .interactive-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card);
+  }
+
+  .bounce-hover {
+    transition: var(--transition-bounce);
+  }
+  
+  .bounce-hover:hover {
+    transform: scale(1.05);
+  }
+
+  /* Feature Icons */
+  .feature-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    background: var(--gradient-hero);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-soft);
+  }
+
+  /* Section Spacing */
+  .section-padding {
+    padding: 6rem 0;
+  }
+  
+  .section-padding-sm {
+    padding: 4rem 0;
   }
 }
